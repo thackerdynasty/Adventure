@@ -6,4 +6,4 @@ game_map = {
 	"north":"alleyway"},
 	"alleyway":{"west":"home"}
 }
-descriptions = {"jail":"At the jailcell","sewers":"The sewers, main way to escape jail.","alleyway":"Dark and spooky, you cannot be spotted."}
+descriptions = {"jail":"At the jailcell","sewers":"The sewers, main way to escape jail.","alleyway":"Dark and spooky, you cannot be spotted.","home":"Escaped!"}
