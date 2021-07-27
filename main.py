@@ -24,7 +24,7 @@ def main():
 				gt = True
 			if player["location"] == "exit2" or "exit3":
 				print("YOU...HAVE...BEEN...ARRESTED.")
-			if player["location] == "home":
+			if player["location"] == "home":
 				if gt == True:
 					  print("You got away with the money!")
 				else:
