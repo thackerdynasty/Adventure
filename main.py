@@ -4,19 +4,24 @@ game_map = {
 	"sewers":{"west": "exit1", "south": "exit2"},
 	"exit1":{"south":"exit3","west": "bankvault", 
 	"north":"alleyway"},
-	"alleyway":{"west":"home"}
+	"alleyway":{"west":"home"},
+	"bankvault":{"east":"exit1"}
 }
-descriptions = {"jail":"At the jailcell","sewers":"The sewers, main way to escape jail.","alleyway":"Dark and spooky, you cannot be spotted.","home":"Escaped!"}
+descriptions = {"jail":"the jailcell","sewers":"The main way to escape jail.","alleyway":"Dark and spooky, you cannot be spotted.","home":"Escaped!","bankvault":"with MONEY!", "exit1":"_","exit2":"_","exit3":"_"}
 directions = ["north", "south", "east", "west"]
 game_over = False
+def look(location):
+	return descriptions[location]
 def main():
 	global game_over
 	while not game_over:
 		inputt = input("Which way do you want to go?")
-		if inputt in directions:
-			print("hello!")
+		if inputt in directions and inputt in game_map[player["location"]]:
+			player["location"] = game_map[player["location"]][inputt]
+			print("You just moved to {}".format(player["location"]), ",", look(player["location"]))
+			#print("hello!")
 		elif inputt == "look":
-			print("Ok")
+			print(look(player["location"]))
 		elif inputt == "quit":
 			print("Goodbye")
 		elif inputt=="help":
