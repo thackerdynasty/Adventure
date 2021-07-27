@@ -1,4 +1,5 @@
 player = {"location":"jail"}
+gt = False
 game_map = {
 	"jail": {"south": "sewers"},
 	"sewers":{"west": "exit1", "south": "exit2"},
@@ -19,6 +20,15 @@ def main():
 		if inputt in directions and inputt in game_map[player["location"]]:
 			player["location"] = game_map[player["location"]][inputt]
 			print("You just moved to {}".format(player["location"]), ",", look(player["location"]))
+			if player["location"] == "bankvault":
+				gt = True
+			if player["location"] == "exit2" or "exit3":
+				print("YOU...HAVE...BEEN...ARRESTED.")
+			if player["location] == "home":
+				if gt == True:
+					  print("You got away with the money!")
+				else:
+					  print("You escaped, but you forgot the money...")
 			#print("hello!")
 		elif inputt == "look":
 			print(look(player["location"]))
