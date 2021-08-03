@@ -22,8 +22,9 @@ def main():
 			print("You just moved to {}".format(player["location"]), ",", look(player["location"]))
 			if player["location"] == "bankvault":
 				gt = True
-			if player["location"] == "exit2" or "exit3":
+			if player["location"] == "exit2" or player["location"] == "exit3":
 				print("YOU...HAVE...BEEN...ARRESTED.")
+				break
 			if player["location"] == "home":
 				if gt == True:
 					  print("You got away with the money!")
